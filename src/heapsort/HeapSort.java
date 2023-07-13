@@ -1,11 +1,9 @@
 package heapsort;
 
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
-/**
- *
- * @author Francisco Pautt Guzmán
- */
+
 public class HeapSort {
     
     private static void heapsort(int[] inputArray){
@@ -61,7 +59,10 @@ public class HeapSort {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int[] array = {7, 1, 5, 9, 3, 6, 2, 8, 4};
+        int[] array = new int[25];
+        for (int i = 0; i < array.length; i++) {
+            array[i] =  ThreadLocalRandom.current().nextInt(0, array.length);
+        }
         System.out.println("From this: ");
         System.out.println(printArray(array));
         System.out.println("\n");
